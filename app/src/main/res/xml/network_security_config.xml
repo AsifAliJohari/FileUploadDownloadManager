@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- For Release Builds: Enforce HTTPS -->
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">proof.ovh.net</domain>
+<!--        <certificates src="@raw/hetznerde.crt"/>-->
+    </domain-config>
+
+    <domain-config>
+        <domain includeSubdomains="true">nbg1-speed.hetzner.com</domain>
+        <trust-anchors>
+            <certificates src="@raw/hetznerde"/>
+        </trust-anchors>
+    </domain-config>
+
+   <!-- &lt;!&ndash; For Debug Builds: Allow Cleartext for Development &ndash;&gt;
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">debug.example.com</domain>
+    </domain-config>
+
+    &lt;!&ndash; Certificates for Pinning &ndash;&gt;
+    <domain-config>
+        <domain includeSubdomains="true">secure.example.com</domain>
+        <trust-anchors>
+            &lt;!&ndash; System default trusted CAs &ndash;&gt;
+            <certificates src="system" />
+            &lt;!&ndash; Custom Certificate &ndash;&gt;
+            <certificates src="@raw/custom_certificate" />
+        </trust-anchors>
+    </domain-config>
+
+    &lt;!&ndash; Fall-back default configuration &ndash;&gt;
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>-->
+</network-security-config>
